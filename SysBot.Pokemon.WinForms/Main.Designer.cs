@@ -89,8 +89,9 @@ namespace SysBot.Pokemon.WinForms
             panelLeftSide.Controls.Add(lblTitle);
             panelLeftSide.Dock = DockStyle.Left;
             panelLeftSide.Location = new Point(0, 0);
+            panelLeftSide.Margin = new Padding(3, 2, 3, 2);
             panelLeftSide.Name = "panelLeftSide";
-            panelLeftSide.Size = new Size(220, 422);
+            panelLeftSide.Size = new Size(192, 473);
             panelLeftSide.TabIndex = 0;
             // 
             // btnLogs
@@ -98,17 +99,18 @@ namespace SysBot.Pokemon.WinForms
             btnLogs.Dock = DockStyle.Top;
             btnLogs.FlatAppearance.BorderSize = 0;
             btnLogs.FlatStyle = FlatStyle.Flat;
-            btnLogs.Font = new Font("Enter The Grid", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogs.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogs.ForeColor = Color.White;
             btnLogs.IconChar = IconChar.ListDots;
             btnLogs.IconColor = Color.White;
             btnLogs.IconFont = IconFont.Solid;
             btnLogs.IconSize = 50;
             btnLogs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogs.Location = new Point(0, 245);
+            btnLogs.Location = new Point(0, 184);
+            btnLogs.Margin = new Padding(3, 2, 3, 2);
             btnLogs.Name = "btnLogs";
-            btnLogs.Padding = new Padding(10, 0, 20, 0);
-            btnLogs.Size = new Size(220, 60);
+            btnLogs.Padding = new Padding(9, 0, 18, 0);
+            btnLogs.Size = new Size(192, 45);
             btnLogs.TabIndex = 3;
             btnLogs.Text = " Logs";
             btnLogs.TextAlign = ContentAlignment.MiddleLeft;
@@ -121,17 +123,18 @@ namespace SysBot.Pokemon.WinForms
             btnHub.Dock = DockStyle.Top;
             btnHub.FlatAppearance.BorderSize = 0;
             btnHub.FlatStyle = FlatStyle.Flat;
-            btnHub.Font = new Font("Enter The Grid", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHub.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHub.ForeColor = Color.White;
             btnHub.IconChar = IconChar.TableList;
             btnHub.IconColor = Color.White;
             btnHub.IconFont = IconFont.Solid;
             btnHub.IconSize = 50;
             btnHub.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHub.Location = new Point(0, 185);
+            btnHub.Location = new Point(0, 139);
+            btnHub.Margin = new Padding(3, 2, 3, 2);
             btnHub.Name = "btnHub";
-            btnHub.Padding = new Padding(10, 0, 20, 0);
-            btnHub.Size = new Size(220, 60);
+            btnHub.Padding = new Padding(9, 0, 18, 0);
+            btnHub.Size = new Size(192, 45);
             btnHub.TabIndex = 2;
             btnHub.Text = " Hub";
             btnHub.TextAlign = ContentAlignment.MiddleLeft;
@@ -144,9 +147,10 @@ namespace SysBot.Pokemon.WinForms
             CB_Themes.BackColor = Color.FromArgb(20, 19, 57);
             CB_Themes.ForeColor = Color.White;
             CB_Themes.FormattingEnabled = true;
-            CB_Themes.Location = new Point(47, 322);
+            CB_Themes.Location = new Point(41, 242);
+            CB_Themes.Margin = new Padding(3, 2, 3, 2);
             CB_Themes.Name = "CB_Themes";
-            CB_Themes.Size = new Size(127, 28);
+            CB_Themes.Size = new Size(112, 23);
             CB_Themes.TabIndex = 5;
             // 
             // btnBots
@@ -154,17 +158,18 @@ namespace SysBot.Pokemon.WinForms
             btnBots.Dock = DockStyle.Top;
             btnBots.FlatAppearance.BorderSize = 0;
             btnBots.FlatStyle = FlatStyle.Flat;
-            btnBots.Font = new Font("Enter The Grid", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBots.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBots.ForeColor = Color.White;
             btnBots.IconChar = IconChar.Robot;
             btnBots.IconColor = Color.White;
             btnBots.IconFont = IconFont.Solid;
             btnBots.IconSize = 50;
             btnBots.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBots.Location = new Point(0, 125);
+            btnBots.Location = new Point(0, 94);
+            btnBots.Margin = new Padding(3, 2, 3, 2);
             btnBots.Name = "btnBots";
-            btnBots.Padding = new Padding(10, 0, 20, 0);
-            btnBots.Size = new Size(220, 60);
+            btnBots.Padding = new Padding(9, 0, 18, 0);
+            btnBots.Size = new Size(192, 45);
             btnBots.TabIndex = 1;
             btnBots.Text = " Bots";
             btnBots.TextAlign = ContentAlignment.MiddleLeft;
@@ -181,17 +186,19 @@ namespace SysBot.Pokemon.WinForms
             panelImageLogo.Controls.Add(pictureLogo);
             panelImageLogo.Dock = DockStyle.Top;
             panelImageLogo.Location = new Point(0, 0);
+            panelImageLogo.Margin = new Padding(3, 2, 3, 2);
             panelImageLogo.Name = "panelImageLogo";
-            panelImageLogo.Size = new Size(220, 125);
+            panelImageLogo.Size = new Size(192, 94);
             panelImageLogo.TabIndex = 0;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(20, 19, 57);
             panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(0, 6);
+            panel6.Location = new Point(0, 4);
+            panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(6, 113);
+            panel6.Size = new Size(5, 86);
             panel6.TabIndex = 5;
             panel6.Paint += panel6_Paint;
             // 
@@ -200,17 +207,19 @@ namespace SysBot.Pokemon.WinForms
             panel5.BackColor = Color.FromArgb(20, 19, 57);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(220, 6);
+            panel5.Size = new Size(192, 4);
             panel5.TabIndex = 4;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(20, 19, 57);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 119);
+            panel3.Location = new Point(0, 90);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(220, 6);
+            panel3.Size = new Size(192, 4);
             panel3.TabIndex = 3;
             // 
             // pictureLogo
@@ -218,9 +227,10 @@ namespace SysBot.Pokemon.WinForms
             pictureLogo.BackColor = Color.Transparent;
             pictureLogo.BackgroundImageLayout = ImageLayout.Stretch;
             pictureLogo.Image = (Image)resources.GetObject("pictureLogo.Image");
-            pictureLogo.Location = new Point(3, 12);
+            pictureLogo.Location = new Point(3, 9);
+            pictureLogo.Margin = new Padding(3, 2, 3, 2);
             pictureLogo.Name = "pictureLogo";
-            pictureLogo.Size = new Size(217, 107);
+            pictureLogo.Size = new Size(190, 80);
             pictureLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureLogo.TabIndex = 0;
             pictureLogo.TabStop = false;
@@ -230,10 +240,10 @@ namespace SysBot.Pokemon.WinForms
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Bahnschrift", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Gainsboro;
-            lblTitle.Location = new Point(-1, 390);
+            lblTitle.Location = new Point(-1, 372);
             lblTitle.Margin = new Padding(0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(220, 32);
+            lblTitle.Size = new Size(192, 24);
             lblTitle.TabIndex = 4;
             lblTitle.Text = "ZE FusionBot | v0.0.0 | MODE: None";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -243,8 +253,9 @@ namespace SysBot.Pokemon.WinForms
             panel4.BackColor = Color.FromArgb(20, 19, 57);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(6, 58);
+            panel4.Size = new Size(5, 44);
             panel4.TabIndex = 4;
             // 
             // panelTitleBar
@@ -258,9 +269,10 @@ namespace SysBot.Pokemon.WinForms
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(upperPanelImage);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(220, 0);
+            panelTitleBar.Location = new Point(192, 0);
+            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(580, 58);
+            panelTitleBar.Size = new Size(754, 44);
             panelTitleBar.TabIndex = 1;
             // 
             // btnClose
@@ -271,10 +283,11 @@ namespace SysBot.Pokemon.WinForms
             btnClose.IconChar = IconChar.Close;
             btnClose.IconColor = Color.IndianRed;
             btnClose.IconFont = IconFont.Auto;
-            btnClose.IconSize = 20;
-            btnClose.Location = new Point(556, 6);
+            btnClose.IconSize = 16;
+            btnClose.Location = new Point(732, 4);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(20, 22);
+            btnClose.Size = new Size(18, 16);
             btnClose.TabIndex = 4;
             btnClose.TabStop = false;
             // 
@@ -285,10 +298,11 @@ namespace SysBot.Pokemon.WinForms
             btnMaximize.IconChar = IconChar.WindowMaximize;
             btnMaximize.IconColor = Color.White;
             btnMaximize.IconFont = IconFont.Auto;
-            btnMaximize.IconSize = 20;
-            btnMaximize.Location = new Point(537, 6);
+            btnMaximize.IconSize = 16;
+            btnMaximize.Location = new Point(716, 4);
+            btnMaximize.Margin = new Padding(3, 2, 3, 2);
             btnMaximize.Name = "btnMaximize";
-            btnMaximize.Size = new Size(20, 22);
+            btnMaximize.Size = new Size(18, 16);
             btnMaximize.TabIndex = 3;
             btnMaximize.TabStop = false;
             // 
@@ -299,10 +313,11 @@ namespace SysBot.Pokemon.WinForms
             btnMinimize.IconChar = IconChar.WindowMinimize;
             btnMinimize.IconColor = Color.White;
             btnMinimize.IconFont = IconFont.Auto;
-            btnMinimize.IconSize = 20;
-            btnMinimize.Location = new Point(518, 6);
+            btnMinimize.IconSize = 16;
+            btnMinimize.Location = new Point(699, 4);
+            btnMinimize.Margin = new Padding(3, 2, 3, 2);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(20, 22);
+            btnMinimize.Size = new Size(18, 16);
             btnMinimize.TabIndex = 2;
             btnMinimize.TabStop = false;
             // 
@@ -312,29 +327,31 @@ namespace SysBot.Pokemon.WinForms
             childFormIcon.IconChar = IconChar.House;
             childFormIcon.IconColor = Color.White;
             childFormIcon.IconFont = IconFont.Auto;
-            childFormIcon.IconSize = 40;
-            childFormIcon.Location = new Point(15, 12);
+            childFormIcon.IconSize = 30;
+            childFormIcon.Location = new Point(13, 9);
+            childFormIcon.Margin = new Padding(3, 2, 3, 2);
             childFormIcon.Name = "childFormIcon";
-            childFormIcon.Size = new Size(40, 40);
+            childFormIcon.Size = new Size(35, 30);
             childFormIcon.TabIndex = 1;
             childFormIcon.TabStop = false;
             // 
             // lblTitleChildForm
             // 
             lblTitleChildForm.AutoSize = true;
-            lblTitleChildForm.Font = new Font("Gnuolane Rg", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitleChildForm.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitleChildForm.ForeColor = Color.White;
-            lblTitleChildForm.Location = new Point(46, 7);
+            lblTitleChildForm.Location = new Point(40, 5);
             lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(173, 53);
+            lblTitleChildForm.Size = new Size(211, 39);
             lblTitleChildForm.TabIndex = 0;
             lblTitleChildForm.Text = "LOADING ...";
             // 
             // upperPanelImage
             // 
-            upperPanelImage.Location = new Point(597, 5);
+            upperPanelImage.Location = new Point(522, 4);
+            upperPanelImage.Margin = new Padding(3, 2, 3, 2);
             upperPanelImage.Name = "upperPanelImage";
-            upperPanelImage.Size = new Size(100, 50);
+            upperPanelImage.Size = new Size(88, 38);
             upperPanelImage.TabIndex = 0;
             upperPanelImage.TabStop = false;
             // 
@@ -342,18 +359,20 @@ namespace SysBot.Pokemon.WinForms
             // 
             shadowPanelTop.BackColor = Color.FromArgb(20, 19, 57);
             shadowPanelTop.Dock = DockStyle.Top;
-            shadowPanelTop.Location = new Point(220, 58);
+            shadowPanelTop.Location = new Point(192, 44);
+            shadowPanelTop.Margin = new Padding(3, 2, 3, 2);
             shadowPanelTop.Name = "shadowPanelTop";
-            shadowPanelTop.Size = new Size(580, 6);
+            shadowPanelTop.Size = new Size(754, 4);
             shadowPanelTop.TabIndex = 2;
             // 
             // shadowPanelLeft
             // 
             shadowPanelLeft.BackColor = Color.FromArgb(20, 19, 57);
             shadowPanelLeft.Dock = DockStyle.Left;
-            shadowPanelLeft.Location = new Point(220, 64);
+            shadowPanelLeft.Location = new Point(192, 48);
+            shadowPanelLeft.Margin = new Padding(3, 2, 3, 2);
             shadowPanelLeft.Name = "shadowPanelLeft";
-            shadowPanelLeft.Size = new Size(6, 358);
+            shadowPanelLeft.Size = new Size(5, 425);
             shadowPanelLeft.TabIndex = 3;
             // 
             // panelMain
@@ -362,43 +381,45 @@ namespace SysBot.Pokemon.WinForms
             panelMain.Controls.Add(panel2);
             panelMain.Controls.Add(panel1);
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(226, 64);
+            panelMain.Location = new Point(197, 48);
+            panelMain.Margin = new Padding(3, 2, 3, 2);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(574, 358);
+            panelMain.Size = new Size(749, 425);
             panelMain.TabIndex = 4;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(20, 19, 57);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 352);
+            panel2.Location = new Point(0, 421);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(568, 6);
+            panel2.Size = new Size(744, 4);
             panel2.TabIndex = 3;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(20, 19, 57);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(568, 0);
+            panel1.Location = new Point(744, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(6, 358);
+            panel1.Size = new Size(5, 425);
             panel1.TabIndex = 4;
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 422);
+            ClientSize = new Size(946, 473);
             Controls.Add(panelMain);
             Controls.Add(shadowPanelLeft);
             Controls.Add(shadowPanelTop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelLeftSide);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = Properties.Resources.icon;
-            Margin = new Padding(5, 4, 5, 4);
-            MinimumSize = new Size(800, 422);
+            Margin = new Padding(4, 3, 4, 3);
+            MinimumSize = new Size(700, 316);
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ZE FusionBot";
