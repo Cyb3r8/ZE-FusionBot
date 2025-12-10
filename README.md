@@ -1,8 +1,5 @@
 <h1 align="center">
-    <a href="https://amplication.com/#gh-light-mode-only">
-    <img src="https://i.imgur.com/0HWW0te.png">
-    </a>
-    <a href="https://amplication.com/#gh-dark-mode-only">
+    <a href="http://ninetales-paradise.com/">
     <img src="https://i.imgur.com/0HWW0te.png">
     </a>
 </h1>
@@ -13,7 +10,7 @@
   <i>A community-driven and inspired SysBot.NET project with the most beautiful GUI that unites code from everyone, supporting LGPE, SWSH, BDSP, PLA, SV, and PLZA!</i>
 </p>
 <h2 align="center">
-  Visit <a href="https://FreeMons.Org">FreeMons.Org</a> to join Zeraora's Emporium!
+  Visit <a href="http://ninetales-paradise.com/">Ninetale's Paradise</a> to join amazing community!
 </h2>
 <p align="center">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=Secludedly.ZE-FusionBot" alt="Visitors">
@@ -31,7 +28,7 @@
 
 ## 🚀 Introduction
 
-`ZE FusionBot` is a powerful and open-source SysBot.NET fork, initially tailored for the Discord server [Zeraora's Emporium](https://FreeMons.Org). While originally built for internal server use, it has transformed into a beautiful, community-powered GUI with dozens of integrated forks and unique enhancements, catering to every Nintendo Switch Pokémon game.
+`ZE FusionBot` is a powerful and open-source SysBot.NET fork (made by Secludedly. While originally built for internal server use, it has transformed into a beautiful, community-powered GUI with dozens of integrated forks and unique enhancements, catering to every Nintendo Switch Pokémon game.
 
 ---
 
