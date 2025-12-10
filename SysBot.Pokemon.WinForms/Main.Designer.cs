@@ -348,7 +348,7 @@ namespace SysBot.Pokemon.WinForms
             // 
             // upperPanelImage
             // 
-            upperPanelImage.Location = new Point(522, 4);
+            upperPanelImage.Location = new Point(288, 4);
             upperPanelImage.Margin = new Padding(3, 2, 3, 2);
             upperPanelImage.Name = "upperPanelImage";
             upperPanelImage.Size = new Size(88, 38);
@@ -477,6 +477,7 @@ namespace SysBot.Pokemon.WinForms
         internal Panel panel6;
         internal Panel panel5;
         private ComboBox CB_Themes;
+        private PictureBox upperPanelImage;
     }
 }
 

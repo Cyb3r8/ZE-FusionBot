@@ -670,9 +670,6 @@ namespace SysBot.Pokemon.WinForms
 
         }
 
-        // Initialize the method for the upper panel image in the upperPanelImage
-        private PictureBox upperPanelImage;
-
         private void InitializeUpperImage()
         {
             upperPanelImage = new PictureBox
