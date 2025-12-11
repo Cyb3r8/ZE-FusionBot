@@ -63,7 +63,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: PokeBot
+          name: ZE_FusionBot
           path: ./publish
 
   create-release:
@@ -96,7 +96,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: PokeBot
+          name: ZE_FusionBot
           path: ./publish
       - name: Create Release
         id: create_release
@@ -118,8 +118,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./publish/PokeBot.exe
-          asset_name: PokeBot.exe
+          asset_path: ./publish/ZE_FusionBot.exe
+          asset_name: ZE_FusionBot.exe
           asset_content_type: application/octet-stream
       - name: Update Last Known Version
         if: success()
