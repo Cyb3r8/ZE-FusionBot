@@ -2,7 +2,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SysBot.Pokemon.WinForms
@@ -36,32 +35,10 @@ namespace SysBot.Pokemon.WinForms
             // Set text rendering to be compatible
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Run splash as the main form temporarily
-            var splash = new SplashScreen();
-            splash.StartPosition = FormStartPosition.CenterScreen;
-            splash.TopMost = true;
-
-            // When splash loads, preload assets async
-            splash.Shown += async (s, e) =>
-            {
-                // Start loading assets
-                var preloadTask = PreloadAssetsAsync();
-
-                // Require splash to last at least 3 seconds
-                await Task.WhenAll(
-                    preloadTask,
-                    Task.Delay(3000)
-                );
-
-                // After loading + delay, show main form
-                var mainForm = new Main();
-                mainForm.StartPosition = FormStartPosition.CenterScreen;
-                mainForm.Show();
-
-                // Hide splash
-                splash.Hide();
-            };
-
+            ///////////////////////////////////////////
+            /// Load fonts before showing main form ///
+            ///////////////////////////////////////////
+            LoadFonts();
 
             ///////////////////////////////////////////
             /// Prevent crashes from missing fonts ////
@@ -70,6 +47,9 @@ namespace SysBot.Pokemon.WinForms
             {
                 if (e.Exception is ArgumentException && e.Exception.Message.Contains("Font"))
                 {
+                    // Log the font error but don't crash
+                    Console.WriteLine($"[Font Warning] {e.Exception.Message}");
+
                     // Global fallback to avoid crashes from missing fonts
                     Application.UseWaitCursor = false;
 
@@ -81,11 +61,19 @@ namespace SysBot.Pokemon.WinForms
                         .ToList()
                         .ForEach(f => ApplyFallbackFont(f, fallback));
 
-                    return;
+                    return; // Handle gracefully, don't crash
                 }
 
-                // If it's not a font issue, rethrow
-                throw e.Exception;
+                if (e.Exception is InvalidOperationException && e.Exception.Message.Contains("Font"))
+                {
+                    // Log and handle Font Awesome loading errors
+                    Console.WriteLine($"[Font Warning] {e.Exception.Message}");
+                    return; // Handle gracefully, don't crash
+                }
+
+                // For other exceptions, log them but don't crash the entire application
+                Console.WriteLine($"[Unhandled Exception] {e.Exception.GetType().Name}: {e.Exception.Message}");
+                Console.WriteLine(e.Exception.StackTrace);
             };
 
             /// Recursively apply fallback font to control and its children
@@ -104,17 +92,17 @@ namespace SysBot.Pokemon.WinForms
 
 
             ///////////////////////////////////////////
-            /// Start UI form on the main thread //////
+            /// Start main form ////////////////////////
             ///////////////////////////////////////////
-            Application.Run(splash);
+            Application.Run(new Main());
         }
 
         ////////////////////////////////////////////
-        // Preload assets like fonts, images, etc.//
+        // Load fonts synchronously on startup ////
         ////////////////////////////////////////////
-        private static async Task PreloadAssetsAsync()
+        private static void LoadFonts()
         {
-            await Task.Run(() =>
+            try
             {
                 FontManager.LoadFonts(
                     "bahnschrift.ttf",
@@ -143,7 +131,13 @@ namespace SysBot.Pokemon.WinForms
                     "UbuntuMono-BI.ttf",
                     "UbuntuMono-RI.ttf"
                 );
-            });
+            }
+            catch (Exception ex)
+            {
+                // Log font loading errors but don't fail startup
+                Console.WriteLine($"[Font Loading Warning] Some fonts failed to load: {ex.Message}");
+                Console.WriteLine("[Font Loading Warning] Application will use fallback fonts.");
+            }
         }
     }
 }
