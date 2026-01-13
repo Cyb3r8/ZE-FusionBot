@@ -392,7 +392,7 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 |---------|---------|---------|---------|------------|
 | `joke` | lol, insult | Tell a random joke. | `joke` | Everyone |
 | `hello` | hi, hey, yo | Say hello to the bot. | `hello` | Everyone |
-| `medals` | ml | View medals earned from trades. | `medals` | Everyone |
+| `mi` | ml | View personal profile card w/ trainer info. | `myinfo` | Everyone |
 
 ## 🧠 Passive Features
 
@@ -464,7 +464,7 @@ These commands integrate directly with the bot’s legality pipeline and AutoOT 
 - **Gen 2–8 Locations:** [Imgur](https://i.imgur.com/v02WMmL.jpeg)  
 - **SWSH/BDSP/PLA/SV/PLZA Locations:** [Pastebin](https://pastebin.com/NBu14c6q)
 
-> 🔹 Currently, `Met Location:` only supports **numeric IDs**. See above references for valid values per generation.
+> 🔹 `Met Location:` now supports **numeric IDs** AND **location names**. See above references for valid values per generation.
 
 ---
 
