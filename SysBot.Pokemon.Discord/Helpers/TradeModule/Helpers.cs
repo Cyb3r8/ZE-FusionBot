@@ -9,6 +9,7 @@ using SysBot.Pokemon.Discord.Helpers;
 using SysBot.Pokemon.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using static SysBot.Pokemon.TradeSettings.TradeSettingsCategory;
@@ -124,6 +125,7 @@ public static class Helpers<T> where T : PKM, new()
 
     public static Task<ProcessedPokemonResult<T>> ProcessShowdownSetAsync(string content, bool ignoreAutoOT = false)
     {
+        content = ReusableActions.StripCodeBlock(content);
         bool isEgg = TradeExtensions<T>.IsEggCheck(content);
 
         // CRITICAL FIX: Extract language BEFORE parsing ShowdownSet
@@ -281,6 +283,19 @@ public static class Helpers<T> where T : PKM, new()
             ApplyStandardItemLogic(pkm);
         }
 
+        // Align language and nickname before legality check to avoid false invalids
+        if (pkm is T pkBeforeCheck)
+        {
+            pkBeforeCheck.Language = finalLanguage;
+            if (string.IsNullOrEmpty(set.Nickname))
+            {
+                // Force default species nickname for the target language
+                var laNick = new LegalityAnalysis(pkBeforeCheck);
+                pkBeforeCheck.SetDefaultNickname(laNick);
+                pkBeforeCheck.IsNicknamed = false;
+            }
+        }
+
         // ============================================================================
         // MAX LAIR POKEMON MOVE POPULATION BUG WORKAROUND
         // ============================================================================
@@ -325,8 +340,129 @@ public static class Helpers<T> where T : PKM, new()
         }
 
         var la = new LegalityAnalysis(pkm);
+
+        // Auto-fix language-related nickname mismatches for sets without a nickname
+        if (!la.Valid && string.IsNullOrEmpty(set.Nickname))
+        {
+            if (la.Results.Any(r => r.Identifier is CheckIdentifier.Nickname))
+            {
+                // Clear nickname and re-validate; prevents false invalid when trainer language != set language
+                _ = pkm.ClearNickname();
+                la = new LegalityAnalysis(pkm);
+            }
+        }
+
+        // Handle past gen file requests (PK8, PA8, PB8, PK9) - fix BEFORE returning error
+        if (!la.Valid && pkm is T && la.Results.Any(m => m.Identifier is CheckIdentifier.Memory))
+        {
+            var clone = (T)(object)pkm.Clone();
+            clone.HandlingTrainerName = pkm.OriginalTrainerName;
+            clone.HandlingTrainerGender = pkm.OriginalTrainerGender;
+            if (clone is PK8 or PA8 or PB8 or PK9)
+                ((dynamic)clone).HandlingTrainerLanguage = (byte)pkm.Language;
+            clone.CurrentHandler = 1;
+            var laClone = new LegalityAnalysis(clone);
+            if (laClone.Valid)
+            {
+                pkm = clone;
+                la = laClone;
+            }
+        }
+
+        // ============================================================================
+        // MAX LAIR SHINY FALLBACK
+        // ============================================================================
+        // If a shiny PK8 is still invalid and not already at Max Lair, retry with
+        // MetLocation=244. Many SWSH legendaries and Ultra Beasts are shiny-eligible
+        // only via Dynamax Adventures (Max Lair). ALM sometimes generates them at
+        // the correct location but without moves, or fails to set the shiny PID.
+        // ============================================================================
+        if (!la.Valid && pkm is PK8 pk8Retry && set.Shiny && pk8Retry.MetLocation != 244)
+        {
+            var pk8RetryClone = (PK8)pk8Retry.Clone();
+            pk8RetryClone.MetLocation = 244;
+            pk8RetryClone.SetSuggestedMoves();
+            pk8RetryClone.HealPP();
+            pk8RetryClone.RefreshChecksum();
+            var laRetry = new LegalityAnalysis(pk8RetryClone);
+            if (laRetry.Valid)
+            {
+                pkm = pk8RetryClone;
+                la = laRetry;
+            }
+        }
+        // Also retry if already at Max Lair but still invalid (wrong moves)
+        else if (!la.Valid && pkm is PK8 pk8RetryLair && set.Shiny && pk8RetryLair.MetLocation == 244)
+        {
+            pk8RetryLair.SetSuggestedMoves();
+            pk8RetryLair.HealPP();
+            pk8RetryLair.RefreshChecksum();
+            la = new LegalityAnalysis(pk8RetryLair);
+        }
+        // ============================================================================
+        // END OF MAX LAIR SHINY FALLBACK
+        // ============================================================================
+
+        // ============================================================================
+        // WC8 COMPETITION EVENT FIX — Direct WC8.ConvertToPKM
+        // ============================================================================
+        // For shiny PK8 from event MetLocations (>= 40000), ALM's generation fails
+        // because competition WC8 events have a specific EC/PID generation algorithm
+        // that our manual Xoroshiro fix can't reproduce correctly.
+        // Instead: load the matching WC8 file from the MGDB and call ConvertToPKM
+        // directly — this uses PKHeX's own verified generation logic.
+        // ============================================================================
+        if (!la.Valid && pkm is PK8 pk8WC && pk8WC.MetLocation >= 40000 && pk8WC.IsShiny)
+        {
+            var mgdbPath = Info.Hub.Config.Legality.MGDBPath;
+            if (Directory.Exists(mgdbPath))
+            {
+                var wc8Files = Directory.GetFiles(mgdbPath, "*.wc8", SearchOption.AllDirectories);
+                foreach (var wc8File in wc8Files)
+                {
+                    try
+                    {
+                        var wc8 = new WC8(File.ReadAllBytes(wc8File));
+                        if (wc8.Species != pk8WC.Species || wc8.Form != pk8WC.Form)
+                            continue;
+                        if (wc8.IsShiny == false)
+                            continue;
+
+                        var directPkm = wc8.ConvertToPKM(sav);
+                        if (directPkm is not T directT)
+                            continue;
+
+                        var laWC8 = new LegalityAnalysis(directPkm);
+                        LogUtil.LogInfo($"WC8 ConvertToPKM: file={Path.GetFileName(wc8File)} valid={laWC8.Valid} fateful={directPkm.FatefulEncounter} shiny={directPkm.IsShiny}", "Legality");
+                        if (laWC8.Valid)
+                        {
+                            pkm = directPkm;
+                            la = laWC8;
+                            break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        LogUtil.LogInfo($"WC8 ConvertToPKM error: {ex.Message}", "Legality");
+                    }
+                }
+            }
+        }
+        // ============================================================================
+        // END OF WC8 EVENT FIX
+        // ============================================================================
+
+
         if (pkm is not T pk || !la.Valid)
         {
+            // Diagnostic: log specific legality failure reasons
+            if (pkm != null && !la.Valid)
+            {
+                var failReasons = string.Join(", ", la.Results
+                    .Where(r => !r.Valid)
+                    .Select(r => $"{r.Identifier}"));
+                LogUtil.LogInfo($"TradeModule legality fail: species={pkm.Species} form={pkm.Form} loc={pkm.MetLocation} ot='{pkm.OriginalTrainerName}' shiny={pkm.IsShiny} shinyXor={pkm.ShinyXor} result='{result}' | {failReasons}", "Legality");
+            }
             var reason = GetFailureReason(result, spec);
             var hint = result == "Failed" ? GetLegalizationHint(template, sav, pkm, spec) : null;
             return Task.FromResult(new ProcessedPokemonResult<T>
@@ -785,6 +921,19 @@ public static class Helpers<T> where T : PKM, new()
 
         var la = new LegalityAnalysis(pk!);
 
+        // Auto-fix nickname-only issues on attachments by clearing nickname and re-validating
+        if (!la.Valid && la.Results.Any(r => r.Identifier is CheckIdentifier.Nickname))
+        {
+            var clone = (T)pk!.Clone();
+            _ = clone.ClearNickname();
+            var laNick = new LegalityAnalysis(clone);
+            if (laNick.Valid)
+            {
+                pk = clone;
+                la = laNick;
+            }
+        }
+
         if (!la.Valid)
         {
             string responseMessage;
@@ -818,24 +967,11 @@ public static class Helpers<T> where T : PKM, new()
             return;
         }
 
-        // Handle past gen file requests
-        if (!la.Valid)
-        {
-            if (la.Results.Any(m => m.Identifier is CheckIdentifier.Memory))
-            {
-                var clone = (T)pk!.Clone();
-                clone.HandlingTrainerName = pk.OriginalTrainerName;
-                clone.HandlingTrainerGender = pk.OriginalTrainerGender;
-                if (clone is PK8 or PA8 or PB8 or PK9)
-                    ((dynamic)clone).HandlingTrainerLanguage = (byte)pk.Language;
-                clone.CurrentHandler = 1;
-                la = new LegalityAnalysis(clone);
-                if (la.Valid) pk = clone;
-            }
-        }
+        // Past gen file fix is now handled in ProcessShowdownSetAsync before this point
 
         await QueueHelper<T>.AddToQueueAsync(context, code, trainerName, sig, pk!, PokeRoutineType.LinkTrade,
             tradeType, usr, isBatchTrade, batchTradeNumber, totalBatchTrades, isHiddenTrade, isMysteryEgg,
             lgcode: lgcode, ignoreAutoOT: ignoreAutoOT, setEdited: setEdited, isNonNative: isNonNative).ConfigureAwait(false);
     }
+
 }
