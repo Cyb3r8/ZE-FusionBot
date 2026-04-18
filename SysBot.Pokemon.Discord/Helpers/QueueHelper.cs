@@ -221,7 +221,7 @@ public static class QueueHelper<T> where T : PKM, new()
                 .WithFooter(footerText)
                 .WithAuthor(new EmbedAuthorBuilder()
                     .WithName(embedData.AuthorName)
-                    .WithIconUrl(trader.GetAvatarUrl() ?? trader.GetDefaultAvatarUrl());
+                    .WithIconUrl(trader.GetAvatarUrl() ?? trader.GetDefaultAvatarUrl()));
 
             DetailsExtractor<T>.AddAdditionalText(embedBuilder);
 
@@ -441,7 +441,7 @@ public static class QueueHelper<T> where T : PKM, new()
                         .WithFooter(footerText)
                         .WithAuthor(new EmbedAuthorBuilder()
                             .WithName(embedData.AuthorName)
-                            .WithIconUrl(trader.GetAvatarUrl() ?? trader.GetDefaultAvatarUrl());
+                            .WithIconUrl(trader.GetAvatarUrl() ?? trader.GetDefaultAvatarUrl()));
 
                     DetailsExtractor<T>.AddAdditionalText(embedBuilder);
                     DetailsExtractor<T>.AddNormalTradeFields(embedBuilder, embedData, trader.Mention, pk);
