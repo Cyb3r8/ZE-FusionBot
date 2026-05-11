@@ -5,11 +5,6 @@ using Discord.WebSocket;
 using Newtonsoft.Json;
 using PKHeX.Core;
 using PKHeX.Core.AutoMod;
-using SharpCompress.Archives;
-using SharpCompress.Archives.Rar;
-using SharpCompress.Archives.SevenZip;
-using SharpCompress.Archives.Zip;
-using SharpCompress.Common;
 using SysBot.Base;
 using SysBot.Pokemon.Discord;
 using SysBot.Pokemon.Discord.Helpers;
@@ -1161,17 +1156,19 @@ public partial class TradeModule<T> : ModuleBase<SocketCommandContext> where T :
         }
 
         IUserMessage? processingMessage = null;
+        string? tempDir = null;
 
         try
         {
             processingMessage = await Context.Channel.SendMessageAsync(
-                $"{Context.User.Mention} Processing your archive… Extracting files..."
+                $"{Context.User.Mention} Processing your archive & extracting files..."
             );
 
-            string tempDir = Path.Combine(Path.GetTempPath(), $"FusionBot_BTZ_{Guid.NewGuid()}");
+            tempDir = Path.Combine(Path.GetTempPath(), $"FusionBot_BTZ_{Guid.NewGuid()}");
             Directory.CreateDirectory(tempDir);
 
-            var localArchivePath = Path.Combine(tempDir, attachment.Filename);
+            var safeName = Path.GetFileName(attachment.Filename);
+            var localArchivePath = Path.Combine(tempDir, safeName);
             await File.WriteAllBytesAsync(localArchivePath, archiveBytes);
 
             ArchiveService.ExtractToDirectory(localArchivePath, tempDir);
@@ -1320,6 +1317,10 @@ public partial class TradeModule<T> : ModuleBase<SocketCommandContext> where T :
             if (processingMessage != null)
             {
                 try { await processingMessage.DeleteAsync(); } catch { }
+            }
+            if (tempDir != null && Directory.Exists(tempDir))
+            {
+                try { Directory.Delete(tempDir, recursive: true); } catch { }
             }
         }
 
