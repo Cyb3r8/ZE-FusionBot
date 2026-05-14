@@ -1,34 +1,39 @@
 <h1 align="center">
     <a href="http://ninetales-paradise.com/">
-    <img src="https://i.imgur.com/0HWW0te.png">
+    <img src="https://i.imgur.com/CNMULyy.png">
     </a>
 </h1>
 
-> ⚠️ **Font Notice:** If the program's fonts are not displaying properly for you, download them [here](https://github.com/Secludedly/ZE-FusionBot/blob/main/.extra/Fonts.7z) and install them on your machine.
-
 <p align="center">
-  <i>A community-driven and inspired SysBot.NET project with the most beautiful GUI that unites code from everyone, supporting LGPE, SWSH, BDSP, PLA, SV, and PLZA!</i>
+  <i>A community-driven SysBot.NET project with a gorgeous UI, supporting LGPE, SWSH, BDSP, PLA, SV, and PLZA</i><br>
+    Now rebranded from <b>ZE FusionBot -> FusionBot</b>.
 </p>
 <h2 align="center">
   Visit <a href="http://ninetales-paradise.com/">Ninetale's Paradise</a> to join amazing community!
 </h2>
 <p align="center">
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=Secludedly.ZE-FusionBot" alt="Visitors">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=Secludedly.FusionBot" alt="Visitors">
+</br>
+
+## 🎥 FusionBot Showcase Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=kc6lRVt6M_0">
+    <img src="https://i.imgur.com/IdwuZwM.png" 
+         alt="FusionBot Showcase Video"
+         style="max-width: 100%; height: auto;">
+  </a>
 </p>
-<h4 align="center">
-  <a href="https://FreeMons.Org">
-    <img src="https://i.imgur.com/wbWzI2u.png" alt="discord" style="height: 20px;">
-  </a>
-  <a href="https://ko-fi.com/secludedly">
-    <img src="https://i.imgur.com/nDO4SgL.png" alt="ko-fi" style="height: 20px;">
-  </a>
-</h4>
+
+<p align="center">
+  ▶️ <i>Click the image above to watch the full FusionBot showcase video on YouTube.</i>
+</p>
 
 ---
 
 ## 🚀 Introduction
 
-`ZE FusionBot` is a powerful and open-source SysBot.NET fork (made by Secludedly. While originally built for internal server use, it has transformed into a beautiful, community-powered GUI with dozens of integrated forks and unique enhancements, catering to every Nintendo Switch Pokémon game.
+`FusionBot` is a powerful and open-source SysBot.NET fork (made by Secludedly. While originally built for internal server use, it has transformed into a beautiful, community-powered GUI with dozens of integrated forks and unique enhancements, catering to every Nintendo Switch Pokémon game.
 
 ---
 <p align="center">
@@ -37,9 +42,9 @@
 
 ## 🧬 Community Roots & Inspirations
 
-> **ZE FusionBot is a fusion by design — built from years of shared ideas, forks, experiments, and respect for the SysBot.NET ecosystem.**
+> **FusionBot is a fusion by design — built from years of shared ideas, forks, experiments, and respect for the SysBot.NET ecosystem.**
 
-ZE FusionBot was created, inspired, and upgraded through time, in pieces, through a collaboration of multiple developers of all skill levels with bright ideas and a hobby. There's many I know, and many I don't know, but I have respect and appreciation for them all. If they didn't inspire or help, simply diving into their code and learning C# over the years through their contributions helped me get to this point to continue to refine ZE FusionBot and is also what allowed this project to grow into one of - if not *the best* SysBot program to date, in large to **[@hexbyt3's](https://github.com/hexbyt3)** **[PokeBot](https://github.com/hexbyt3/PokeBot)**, another contender as *the best* SysBot.
+FusionBot was created, inspired, and upgraded through time, in pieces, through a collaboration of multiple developers of all skill levels with bright ideas and a hobby. There's many I know, and many I don't know, but I have respect and appreciation for them all. If they didn't inspire or help, simply diving into their code and learning C# over the years through their contributions helped me get to this point to continue to refine FusionBot and is also what allowed this project to grow into one of - if not *the best* SysBot program to date, in large to **[@hexbyt3's](https://github.com/hexbyt3)** **[PokeBot](https://github.com/hexbyt3/PokeBot)**, another contender as *the best* SysBot.
 
 The projects below represent **the strongest influences** in the SysBot.NET space and the inspiration behind calling this a **Fusion** bot.
 
@@ -76,7 +81,7 @@ The projects below represent **the strongest influences** in the SysBot.NET spac
   One of the first major user-driven evolutions of SysBot.
 
 - **[PokeBot](https://github.com/hexbyt3/PokeBot)**  
-  Created by **[@hexbyt3](https://github.com/hexbyt3)**, a brilliant friend of mine — and the **primary foundation of ZE FusionBot**.  
+  Created by **[@hexbyt3](https://github.com/hexbyt3)**, a brilliant friend of mine — and the **primary foundation of FusionBot**.  
   Much of FusionBot’s structure, philosophy, and stability originates here, alongside deep collaboration and shared ideas between repos.
 
 ---
@@ -90,13 +95,13 @@ A fork I've been following for update inspiration with great C# knowledge
 - **[ManuBot.NET (9B1td0 fork)](https://github.com/9B1td0/ManuBot.NET)** — by **[@9B1td0](https://github.com/9B1td0)**
 I believe this is a fork of ManuBot.NET but seems almost collaborated with the original.
 - **[DudeBot.NET](https://github.com/Havokx89/DudeBot.NET)** — by **[@Havokx89](https://github.com/Havokx89)**
-A fun and fused iteration combining a lot of ZE FusionBot that I follow for various integration ideas.
+A fun and fused iteration combining a lot of FusionBot that I follow for various integration ideas.
 - **[ZenBot.NET](https://github.com/Omni-KingZeno/ZenBot.NET)** — by **[@Omni-KingZeno](https://github.com/Omni-KingZeno)**
 A fork of ManuBot.NET that I follow and quite enjoy getting inspiration from. Plus, great bot name and username. I'm a DBtard.
 - **[TradeBot](https://github.com/jonklee99/Tradebot)** — by **[@jonklee99](https://github.com/jonklee99)** with **[@joseph11024](https://github.com/joseph11024)**
 Created by a good friend that tends to use their own ideas that I've happily borrowed from before.
 - **[ZE-FusionBot (Taku1991 fork)](https://github.com/Taku1991/ZE-FusionBot)** — by **[@Taku1991](https://github.com/Taku1991)**.  
-An independently evolved fork that shares ideas, structure, and inspiration within the ZE FusionBot ecosystem that I myself have proudly borrowed from.
+An independently evolved fork that shares ideas, structure, and inspiration within the FusionBot ecosystem that I myself have proudly borrowed from.
 
 
 </details>
@@ -106,12 +111,11 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 ## ✨ Highlights
 
 - One-click Game Restart, Hot Reload, and Updater.
-- Support for batch trades via Showdown format or .zip archives.
+- Support for batch trades via Showdown format or archives.
 - Mystery Pokémon and Eggs, Battle-Ready, HOME-Ready, and Event Pokémon trading modules.
 - Full GUI control for SysDVR and Switch Remote for PC integration.
-- Smart Auto-Correct and Auto-Legalization.
 - DM embeds with GIFs, Channel Status notifications, Announcement System, Keyword Response.
-- Built-in metrics: Queue tracking, trade counters, medal system.
+- Queue tracking, trade counters, medal system.
 - Multi-Language request support.
 - Live/Real-time log searches.
 - Read user DMs sent to the bot.
@@ -120,122 +124,12 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 
 ## 🖥️ GUI Features
 
-- Animated, hover-responsive panel buttons for Bots / Hub / Logs.
-- Color-coded UI themes: blue-purple primary, themed subpanels.
-- Fully redesigned icons, fonts, buttons, and layout.
-- Bot controller with sections for Address, Status, Trade Type, and Log time.
-- No native window titlebars — drag by top panel. Minimal, modern design.
-- Animated glow around controller buttons to indicate their use.
-- Progress bar in the controller that shows a visual glow during the trade process.
-
-
----
-
-## 🖼️ GUI Previews
-
-<p align="center">
-    <img src="https://i.imgur.com/VZ2oeOy.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_GeneralOverlook2.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Environment2.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Reload2.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Themes2.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Starting2.gif" style="max-width: 100%; height: auto;">
-</p>
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Update2.gif" style="max-width: 100%; height: auto;">
-</p>
-
----
-
-## 🎥 GIF Previews
-
-<details open>
-<summary><strong>🎮 GIFS</strong></summary><br />
-
-<div align="center">
-
-<!-- Row 1 -->
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <strong>Switch Remote for PC</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_SwitchRemoteForPC.gif" alt="Switch Remote for PC" width="100%" />
-    </td>
-    <td align="center" width="50%">
-      <strong>SysDVR</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_SysDVR.gif" alt="SysDVR" width="100%" />
-    </td>
-  </tr>
-
-<!-- Row 2 -->
-  <tr>
-    <td align="center" width="50%">
-      <strong>Batch Trading Archives</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_BatchArchive.gif" alt="Batch Trading Archives" width="100%" />
-    </td>
-    <td align="center" width="50%">
-      <strong>Batch Trading Showdown</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_BatchShowdown.gif" alt="Batch Trading Showdown" width="100%" />
-    </td>
-  </tr>
-
-<!-- Row 3 -->
-  <tr>
-    <td align="center" width="50%">
-      <strong>Peek & Video Feature</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_Peek+Video.gif" alt="Peek & Video Feature" width="100%" />
-    </td>
-    <td align="center" width="50%">
-      <strong>Mystery Mon</strong><br />
-      <img src="https://raw.githubusercontent.com/Secludedly/ZE-FusionBot/main/.readme/README_MysteryMon.gif" alt="Mystery Mon" width="100%" />
-    </td>
-  </tr>
-</table>
-
-</div>
-
-</details>
-
----
-
-## 🖼️ Image Previews
-
-<details open>
-<summary>
- IMAGES
-</summary> <br />
-
-<p align="center">
-    <img width="49%" src="https://i.imgur.com/hsh43rt.png" alt="img1"/>
-&nbsp;
-    <img width="49%" src="https://i.imgur.com/lWkBXLi.png" alt="img2"/>
-</p>
-<p align="center">
-    <img width="49%" src="https://i.imgur.com/pMdWfcT.png" alt="img3"/>
-&nbsp;
-    <img width="49%" src="https://i.imgur.com/rdOq4M7.png" alt="img4"/>
-</p>
-<p align="center">
-    <img width="49%" src="https://i.imgur.com/eWmTGCI.png" alt="img5"/>
-&nbsp;
-    <img width="49%" src="https://i.imgur.com/SPe1iOa.png" alt="img6"/>
-</p>
-<p align="center">
-    <img width="49%" src="https://i.imgur.com/Xn1IMJ6.png" alt="img7"/>
-&nbsp;
-	<img width="49%" src="https://i.imgur.com/N9n5jva.jpeg" alt="img8"/>
-</p>
-</details>
+- Animated, hover-responsive buttons.
+- Color-coded UI themes.
+- Fully custom icons, fonts, buttons, and layout.
+- No native window titlebars. Drag by top panel.
+- Animated glow effects.
+- Glowing visual progress bar during the trade process.
 
 ---
 
@@ -292,6 +186,9 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | `batchTradeZip` | btz | Trade multiple Pokémon from a ZIP file. | `btz <file.zip>` | Everyone |
 | `batchInfo` | bei | Get info about a batch property. | `batchInfo <prop>` | Everyone |
 | `batchValidate` | bev | Validate a batch property. | `batchValidate <prop>` | Everyone |
+| `batchTradeMysteryMon` | btmm | Trade multiple Mystery Pokémon. | `btmm <number>` | Everyone |
+| `batchTradeMysteryEgg` | btme | Trade multiple Mystery eggs. | `btme <number>` | Everyone |
+| `itemBatchTrade` | ibt | Trade a specific item multiple times. | `ibt <item name> <number>` | Everyone |
 
 ## 📊 Queue Management
 
@@ -398,13 +295,13 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 
 - Use filename code like `Great Tusk-Tera(Steel)-03760382.pk9` to auto-set trade code.
 - Paste a PKM in chat to receive info + legal formats.
-- Thank the bot — it might reply!
+- Thank the bot and it might reply!
 
 
 
 ## 📝 Batch Commands to Showdown Format
 
-`ZE FusionBot` supports converting batch commands from Discord messages into official Showdown Set formats. This allows easy bulk Pokémon trading with full customization of stats, moves, ribbons, and other metadata.
+`FusionBot` supports converting batch commands from Discord messages into official Showdown Set formats. This allows easy bulk Pokémon trading with full customization of stats, moves, ribbons, and other metadata.
 
 ### Supported Batch Command Mappings
 
@@ -418,7 +315,7 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | `.MetDate=` | `Met Date:` | Supports flexible date formats. |
 | `.StatNature=` | `Stat Nature:` | Accepts a Nature keyword. |
 | `~=Version=` | `Game:` or `Version:` | Supports full game names or abbreviations. |
-| `.MetLocation=` | `Met Location:` | [Numeric IDs](https://github.com/Secludedly/ZE-FusionBot?tab=readme-ov-file#-met-location-reference) & [Location names](https://github.com/Secludedly/ZE-FusionBot/blob/f72fded7b30c1c6a03bd1cf22f3366f88ec9b257/SysBot.Pokemon/Helpers/BatchCommandNormalizer.cs#L780) supported. |
+| `.MetLocation=` | `Met Location:` | [Numeric IDs](https://github.com/Secludedly/FusionBot?tab=readme-ov-file#-met-location-reference) & [Location names](https://github.com/Secludedly/FusionBot/blob/f72fded7b30c1c6a03bd1cf22f3366f88ec9b257/SysBot.Pokemon/Helpers/BatchCommandNormalizer.cs#L780) supported. |
 | `.HyperTrainFlags=` | `HyperTrain:` | True / False. |
 | `.HT_[STAT]=` | `HT:` | Supports HP, Atk, Def, SpA, SpD, Spe. |
 | `.Moves=` | `Moves:` | “Random” generates random moves. |
@@ -430,15 +327,15 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | `.SetIVs=` | `Set IVs:` | Accepts `Random`, or presets like `1IV`–`6IV`. |
 | `.GV_[STAT]=` | `GVs:` | Supports HP, Atk, Def, SpA, SpD, Spe. |
 | `.Marking[type]=` | `Markings:` | Diamond, Heart, Square, Star, Triangle, Circle in Red or Blue `Markings: Diamond=Red / Circle=Blue` etc. |
-| `.Characteristic=` | `Characteristic:` | Type out a [characteristic](https://github.com/Secludedly/ZE-FusionBot?tab=readme-ov-file#-characteristic-reference). |
+| `.Characteristic=` | `Characteristic:` | Type out a [characteristic](https://github.com/Secludedly/FusionBot?tab=readme-ov-file#-characteristic-reference). |
 | `.Nickname=` | `Nickname:` | Write "Suggest" for a random nickname pulled from code dictionary. |
+| `.MoveX_PP=` & `MoveX_PPUps=` | `PPUps:` | True / False, or a number from 0-3. Applied to all moves. |
 
 ---
 
 ## 🧭 Slash Command Support
 
-ZE FusionBot supports **modern Discord Slash Commands** for fast, clean Pokémon creation across all supported games.  
-These commands integrate directly with the bot’s legality pipeline and AutoOT logic.
+FusionBot supports **modern Discord Slash Commands**.
 
 ### 🎮 Available Slash Commands
 
@@ -453,10 +350,8 @@ These commands integrate directly with the bot’s legality pipeline and AutoOT 
 
 ### 🔹 Notes
 - Slash commands provide **guided Pokémon creation** without needing manual Showdown formatting.
-- Fully compatible with **Auto-Legalization**, **AutoOT**, and **language handling**.
+- Fully compatible with **AutoOT** and **language handling**.
 - Ideal for newer users or servers that want a **clean, modern interaction flow**.
-
-> Text commands and batch systems remain fully supported — slash commands simply add another powerful option.
 
 ---
 
@@ -532,7 +427,7 @@ Markings: Diamond=Red / Heart=Red / Square=Blue / Star=Blue / Triangle=Red / Cir
 FusionBot automatically applies your **trainer information** based on the save file you’re currently using.  
 - Your **OT / TID / SID / OTGender** are applied automatically.  
 - To keep the trainer info in your own files, attach them with `t true`.  
-- For Showdown Sets, simply include the OT/TID/SID you want — AutoOT will then be disabled.  
+- For Showdown Sets, simply include the OT/TID/SID you want and AutoOT will then be disabled.  
 
 This ensures all trades feel natural and consistent with your game, while still letting you override it if you want custom trainer data.
 
@@ -544,7 +439,7 @@ FusionBot assigns you a **personal static Link Trade Code** on your first trade.
 - To reset it: use `dtc` (your next trade gives you a new random code).  
 - To customize it: use `ctc 12345678` (sets your permanent code to whatever you choose).  
 
-This makes trading smoother by removing guesswork — your link code is always ready.  
+This makes trading smoother by removing guesswork, making your link code always ready.  
 
 ---
 
@@ -552,9 +447,9 @@ This makes trading smoother by removing guesswork — your link code is always r
 Every trade you complete is tracked by FusionBot, and your **trade count** shows up in the footer of the trade embed.  
 - For every **50 trades**, you earn a new medal 🥇.  
 - You can check your medals anytime in your profile card with the `mi` command.  
-- It’s just for fun — a little **progression system** to show off your trading dedication.  
+- It’s just for fun; a little **progression system** to show off your trading dedication.  
 
-Think of it like leveling up — the more you trade, the more medals you rack up, proving you’re a true master trader.  
+Think of it like leveling up — the more you trade, the more medals you rack up.  
 
 ---
 
@@ -568,9 +463,4 @@ You can now read the DMs a user sends to the bot. This is fun for when people th
 
 ## 🔗 Other Projects
 
-- [**Switch Remote for PC**](https://github.com/Secludedly/Switch-Remote-For-PC) — GUI to control Switch from PC.
 - [**PKHeX ALM Releases**](https://github.com/Secludedly/PKHeX-ALM-Releases/releases) — PKHeX + AutoLegalityMod pre-built with config files.
-
-## 🤝 Supported Projects
-
-- [**GenPKM**](https://genpkm.com/pokecreator.php) — Web-based alternative to Showdown for bot-ready sets.
